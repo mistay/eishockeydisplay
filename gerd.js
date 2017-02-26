@@ -3,7 +3,10 @@ $( document ).ready(function() {
 	console.log("los gehts, yipieeh!");
 	(function poll() {
 	   setTimeout(function() {
-		   $.ajax({ url: "http://localhost:8080/static/", success: function(data) {
+			//PRODUCTION//$.ajax({ url: "http://localhost:8080/static/", success: function(data) {
+			
+			//TESTING//
+			$.ajax({ url: "http://langhofer.net/eishockeydemo.php", success: function(data) {
 				
 				console.log(data);
 				
