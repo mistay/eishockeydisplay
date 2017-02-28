@@ -24,7 +24,7 @@ namespace BeaconConnectionExample
         InitializeComponent();
             webserverStatic = new WebserverStatic();
             webserverStatic.Start("http://+:8080/static/");
-            start();
+            //start();
     }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,14 +44,16 @@ namespace BeaconConnectionExample
         BeaconConnector = new ZeromqBeaconConnector();
       }
       var serverPort = Convert.ToInt32(txtPort.Text);      
-      var cr = BeaconConnector.OpenBeaconConnection(txtAddress.Text, serverPort, "username", "password"); 
+      var cr = BeaconConnector.OpenBeaconConnection(txtAddress.Text, serverPort, "username", "password");
+            Log.getInstance().info(String.Format("opening connection to {0}:{1}", txtAddress.Text, serverPort));
       BeaconConnector.BeaconChanged += BeaconConnector_BeaconChanged;
     
     }
 
     private void BeaconConnector_BeaconChanged(object sender, EventArgs e)
     {
-      var ci= HdTimingBeacon.GetMainClock(BeaconConnector.CurrentBeacon); //CHANGE
+            Log.getInstance().info(String.Format("BeaconConnector_BeaconChanged"));
+            var ci= HdTimingBeacon.GetMainClock(BeaconConnector.CurrentBeacon); //CHANGE
       lblMainClock.Text = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
       lblScoreHome.Text = ci.ScoreHome.ToString();
       lblScoreAway.Text = ci.ScoreAway.ToString();
@@ -66,7 +68,14 @@ namespace BeaconConnectionExample
             data.period = ci.Period.ToString();
             data.clockIsLastMinute = ci.ClockIsLastMinute;
             data.clockIsRunning = ci.ClockIsRunning;
+            data.TeamnameHome = ci.TeamnameHome;
+            data.TeamnameAway = ci.TeamnameAway;
+            //var c2i = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon); //CHANGE
+            data.JerseyNr1 = ci.JerseyNr;
+            //data.JerseyNr2 = c2i.JerseyNr;
 
+            data.id++;
+            Log.getInstance().info("updated data");
         }
 
     private void Form1_FormClosing(object sender, FormClosingEventArgs e)

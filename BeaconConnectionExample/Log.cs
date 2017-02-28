@@ -31,7 +31,7 @@ namespace BeaconConnectionExample
             Console.Write(line);
             try
             {
-                File.AppendAllText(Path.Combine(Path.GetTempPath(), "pumpauditlive.log"), line);
+                File.AppendAllText(Path.Combine(Path.GetTempPath(), "eishockeydisplay.log"), line);
             }
             catch (Exception e)
             {

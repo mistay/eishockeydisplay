@@ -22,11 +22,17 @@ namespace BeaconConnectionExample
 
         }
 
+        public long id = 0;
         public  String mainClock="";
         public  String scoreHome = "";
         public  String  scoreAway = "";
         public  String period = "";
         public  Boolean clockIsRunning = false;
         public  Boolean clockIsLastMinute = false;
+        public String TeamnameHome = "";
+        public String TeamnameAway = "";
+        public String JerseyNr1 = "";
+        public String JerseyNr2 = "";
+
     }
 }

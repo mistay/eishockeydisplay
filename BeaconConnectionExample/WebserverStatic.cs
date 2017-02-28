@@ -10,8 +10,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Web;
-
-
+using System.Threading;
 
 namespace BeaconConnectionExample
 {
@@ -39,19 +38,39 @@ namespace BeaconConnectionExample
 
             string find = "/static/";
 
+
+
             Log.getInstance().info(context.Request.RawUrl);
+
+
+            long oldid = 0;
+
+            try
+            {
+                oldid = long.Parse(context.Request.RawUrl.Remove(context.Request.RawUrl.IndexOf(find), find.Length));
+            } catch (Exception e)
+            {
+                Log.getInstance().info("could not parse id from http request: " + e.ToString());
+            }
+
+
+            //while (oldid != Data.getInstance().id)
+            {
+                // data did not change, wait ...
+                //Log.getInstance().info("waiting...");
+                //Thread.Sleep(3000);
+                //break;
+            }
 
             byte[] buffer = null;
             response.StatusCode = 200;
 
             response.AddHeader("Access-Control-Allow-Origin", "*");
 
-            String responseString = "hello world";
-
-            Data data = Data.getInstance();
-
+            
             var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            string json = jsonSerializer.Serialize(data);
+
+            string json = jsonSerializer.Serialize(Data.getInstance());
 
 
             buffer = System.Text.Encoding.UTF8.GetBytes(json);
