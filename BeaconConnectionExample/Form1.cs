@@ -24,7 +24,7 @@ namespace BeaconConnectionExample
         InitializeComponent();
         webserverStatic = new WebserverStatic();
         webserverStatic.Start("http://+:8080/static/");
-        start();
+        
     }
 
     private void button1_Click(object sender, EventArgs e)

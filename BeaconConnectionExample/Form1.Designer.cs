@@ -153,6 +153,8 @@
         {
             txtAddress.Text = Properties.Settings.Default.îpaddress;
             txtPort.Text = Properties.Settings.Default.port;
+
+            start();
         }
 
         #endregion
