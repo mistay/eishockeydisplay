@@ -58,6 +58,7 @@
             this.txtAddress.Size = new System.Drawing.Size(93, 23);
             this.txtAddress.TabIndex = 1;
             this.txtAddress.Text = "localhost";
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // lblMainClock
             // 
@@ -141,14 +142,22 @@
             this.Name = "Form1";
             this.Text = "Beacon Connection Example";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += Form1_Load;
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
     }
 
-    #endregion
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+            txtAddress.Text = Properties.Settings.Default.îpaddress;
+            txtPort.Text = Properties.Settings.Default.port;
+        }
 
-    private System.Windows.Forms.Button button1;
+        #endregion
+
+        private System.Windows.Forms.Button button1;
     private System.Windows.Forms.TextBox txtAddress;
     private System.Windows.Forms.Label lblMainClock;
     private System.Windows.Forms.Label lblScoreHome;

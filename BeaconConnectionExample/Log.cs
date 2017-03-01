@@ -37,7 +37,6 @@ namespace BeaconConnectionExample
             {
                 Console.WriteLine("could not log into file: " + e.Message);
             }
-
         }
     }
 }

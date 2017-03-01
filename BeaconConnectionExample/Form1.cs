@@ -24,11 +24,16 @@ namespace BeaconConnectionExample
         InitializeComponent();
             webserverStatic = new WebserverStatic();
             webserverStatic.Start("http://+:8080/static/");
-            //start();
+            start();
     }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            Properties.Settings.Default.îpaddress = txtAddress.Text;
+            Properties.Settings.Default.port = txtPort.Text;
+            Properties.Settings.Default.Save();
+
             start();
         }
 
@@ -116,7 +121,7 @@ namespace BeaconConnectionExample
         Log.getInstance().info("updated data");
     }
 
-    private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
     {
       if (BeaconConnector != null)
       {
@@ -132,6 +137,11 @@ namespace BeaconConnectionExample
                 BeaconConnector.BeaconChanged -= BeaconConnector_BeaconChanged;
                 BeaconConnector.CloseBeaconConnection();
             }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
