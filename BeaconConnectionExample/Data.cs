@@ -34,6 +34,10 @@ namespace BeaconConnectionExample
         public String JerseyNr1 = "";
         public String JerseyNr2 = "";
 
+        public string ShootoutScoreAway = "";
+        public string ShootoutScoreHome = "";
+
+
         public String penalty1homejersey = "";
         public String penalty1homeClockMinutesCorrected = "";
         public String penalty1homeClockSecondsCorrected = "";

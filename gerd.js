@@ -21,7 +21,9 @@ $( document ).ready(function() {
 				$(".clockIsRunning").html(data.clockIsRunning);
 				$(".clockIsLastMinute").html(data.clockIsLastMinute);
 				$(".TeamnameHome").html(data.TeamnameHome);
-				$(".TeamnameAway").html(data.TeamnameAway);	
+				$(".TeamnameAway").html(data.TeamnameAway);
+				$(".ShootoutScoreAway").html(data.ShootoutScoreAway);
+				$(".ShootoutScoreHome").html(data.ShootoutScoreHome);
 				$(".penalty1homejersey").html(data.penalty1homejersey);
 				$(".penalty1homeClockMinutesCorrected").html(data.penalty1homeClockMinutesCorrected);
 				$(".penalty1homeClockSecondsCorrected").html(data.penalty1homeClockSecondsCorrected);
