@@ -34,5 +34,21 @@ namespace BeaconConnectionExample
         public String JerseyNr1 = "";
         public String JerseyNr2 = "";
 
+        public String penalty1homejersey = "";
+        public String penalty1homeClockMinutesCorrected = "";
+        public String penalty1homeClockSecondsCorrected = "";
+
+        public String penalty2homejersey = "";
+        public String penalty2homeClockMinutesCorrected = "";
+        public String penalty2homeClockSecondsCorrected = "";
+
+        public String penalty1awayjersey = "";
+        public String penalty1awayClockMinutesCorrected = "";
+        public String penalty1awayClockSecondsCorrected = "";
+
+        public String penalty2awayjersey = "";
+        public String penalty2awayClockMinutesCorrected = "";
+        public String penalty2awayClockSecondsCorrected = "";
+
     }
 }

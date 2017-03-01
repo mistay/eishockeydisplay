@@ -25,8 +25,19 @@ $( document ).ready(function() {
 				$(".JerseyNr1").html(data.JerseyNr1);
 				$(".JerseyNr2").html(data.JerseyNr2);
 				
+				$(".penalty1homejersey").html(data.penalty1homejersey);
+				$(".penalty1homeClockMinutesCorrected").html(data.penalty1homeClockMinutesCorrected);
+				$(".penalty1homeClockSecondsCorrected").html(data.penalty1homeClockSecondsCorrected);
+				$(".penalty2homejersey").html(data.penalty2homejersey);
+				$(".penalty2homeClockMinutesCorrected").html(data.penalty2homeClockMinutesCorrected);
+				$(".penalty2homeClockSecondsCorrected").html(data.penalty2homeClockSecondsCorrected);
+				$(".penalty1awayjersey").html(data.penalty1awayjersey);
+				$(".penalty1awayClockMinutesCorrected").html(data.penalty1awayClockMinutesCorrected);
+				$(".penalty1awayClockSecondsCorrected").html(data.penalty1awayClockSecondsCorrected);
+				$(".penalty2awayjersey").html(data.penalty2awayjersey);
+				$(".penalty2awayClockMinutesCorrected").html(data.penalty2awayClockMinutesCorrected);
+				$(".penalty2awayClockSecondsCorrected").html(data.penalty2awayClockSecondsCorrected);
 				
-					
 				
 		   }, dataType: "json", complete: poll });
 		}, 500);
