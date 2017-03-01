@@ -22,22 +22,22 @@ namespace BeaconConnectionExample
     public Form1()
     {
         InitializeComponent();
-            webserverStatic = new WebserverStatic();
-            webserverStatic.Start("http://+:8080/static/");
-            start();
+        webserverStatic = new WebserverStatic();
+        webserverStatic.Start("http://+:8080/static/");
+        start();
     }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+    private void button1_Click(object sender, EventArgs e)
+    {
             
-            Properties.Settings.Default.îpaddress = txtAddress.Text;
-            Properties.Settings.Default.port = txtPort.Text;
-            Properties.Settings.Default.Save();
+        Properties.Settings.Default.îpaddress = txtAddress.Text;
+        Properties.Settings.Default.port = txtPort.Text;
+        Properties.Settings.Default.Save();
 
-            start();
-        }
+        start();
+    }
 
-        private void start() { 
+    private void start() { 
 
       if (BeaconConnector!=null)
       {
