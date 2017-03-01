@@ -8,7 +8,7 @@ $( document ).ready(function() {
 			//PRODUCTION//$.ajax({ url: "http://localhost:8080/static/", success: function(data) {
 			
 			//TESTING//
-			$.ajax({ url: ("http://localhost:8080/static/" + oldid), success: function(data) {
+			$.ajax({ url: ("http://langhofer.net/eishockeydemo.php/" + oldid), success: function(data) {
 				
 				console.log(data);
 				
@@ -21,10 +21,7 @@ $( document ).ready(function() {
 				$(".clockIsRunning").html(data.clockIsRunning);
 				$(".clockIsLastMinute").html(data.clockIsLastMinute);
 				$(".TeamnameHome").html(data.TeamnameHome);
-				$(".TeamnameAway").html(data.TeamnameAway);
-				$(".JerseyNr1").html(data.JerseyNr1);
-				$(".JerseyNr2").html(data.JerseyNr2);
-				
+				$(".TeamnameAway").html(data.TeamnameAway);	
 				$(".penalty1homejersey").html(data.penalty1homejersey);
 				$(".penalty1homeClockMinutesCorrected").html(data.penalty1homeClockMinutesCorrected);
 				$(".penalty1homeClockSecondsCorrected").html(data.penalty1homeClockSecondsCorrected);

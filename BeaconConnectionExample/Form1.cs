@@ -70,9 +70,44 @@ namespace BeaconConnectionExample
             data.clockIsRunning = ci.ClockIsRunning;
             data.TeamnameHome = ci.TeamnameHome;
             data.TeamnameAway = ci.TeamnameAway;
-            //var c2i = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon); //CHANGE
-            data.JerseyNr1 = ci.JerseyNr;
-            //data.JerseyNr2 = c2i.JerseyNr;
+
+            Console.WriteLine("data.TeamnameHome" + data.TeamnameHome);
+            Console.WriteLine("data.TeamnameAway" + data.TeamnameAway);
+
+            //ci.ShootoutScoreHome;
+
+
+            IceHockeyClockInformation tmp = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon);
+            if (tmp != null)
+            {
+                data.penalty1homejersey = tmp.JerseyNr;
+                data.penalty1homeClockMinutesCorrected = tmp.ClockMinutesCorrected.ToString();
+                data.penalty1homeClockSecondsCorrected = tmp.ClockSecondsCorrected.ToString();
+            }
+
+            tmp = HdTimingBeacon.GetPenaltyHome2Clock(BeaconConnector.CurrentBeacon);
+            if (tmp != null)
+            {
+                data.penalty2homejersey = tmp.JerseyNr;
+                data.penalty2homeClockMinutesCorrected = tmp.ClockMinutesCorrected.ToString();
+                data.penalty2homeClockSecondsCorrected = tmp.ClockSecondsCorrected.ToString();
+            }
+
+            tmp = HdTimingBeacon.GetPenaltyAway1Clock(BeaconConnector.CurrentBeacon);
+            if (tmp != null)
+            {
+                data.penalty1awayjersey = tmp.JerseyNr;
+                data.penalty1awayClockMinutesCorrected = tmp.ClockMinutesCorrected.ToString();
+                data.penalty1awayClockSecondsCorrected = tmp.ClockSecondsCorrected.ToString();
+            }
+
+            tmp = HdTimingBeacon.GetPenaltyAway2Clock(BeaconConnector.CurrentBeacon);
+            if (tmp != null)
+            {
+                data.penalty2awayjersey = tmp.JerseyNr;
+                data.penalty2awayClockMinutesCorrected = tmp.ClockMinutesCorrected.ToString();
+                data.penalty2awayClockSecondsCorrected = tmp.ClockSecondsCorrected.ToString();
+            }
 
             data.id++;
             Log.getInstance().info("updated data");
