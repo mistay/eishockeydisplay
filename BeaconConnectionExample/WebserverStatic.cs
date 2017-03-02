@@ -32,7 +32,7 @@ namespace BeaconConnectionExample
 
         public override void ProcessRequest(HttpListenerContext context)
         {
-            Log.getInstance().info("client connected");
+            //Log.getInstance().info("client connected");
             HttpListenerRequest request = context.Request;
             HttpListenerResponse response = context.Response;
 
@@ -89,11 +89,11 @@ namespace BeaconConnectionExample
                 {
                     Log.getInstance().info("could not talk to client: " + e.Message);
                 }
-                Log.getInstance().info("wrote to client");
+                //Log.getInstance().info("wrote to client");
                 output.Flush();
                 output.Close();
             }
-            Log.getInstance().info("done speaking to client");
+            //Log.getInstance().info("done speaking to client");
 
             response.Close();
         }
