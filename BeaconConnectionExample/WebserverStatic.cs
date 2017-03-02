@@ -40,7 +40,7 @@ namespace BeaconConnectionExample
 
 
 
-            Log.getInstance().info(context.Request.RawUrl);
+            //Log.getInstance().info(context.Request.RawUrl);
 
 
             long oldid = 0;
