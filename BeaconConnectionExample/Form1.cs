@@ -53,6 +53,8 @@ namespace BeaconConnectionExample
             txtPort.Text = Properties.Settings.Default.port;
 
             start();
+
+            this.WindowState = FormWindowState.Minimized;
         }
 
 
