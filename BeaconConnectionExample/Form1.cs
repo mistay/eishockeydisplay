@@ -88,7 +88,7 @@ namespace BeaconConnectionExample
 
         private void BeaconConnector_BeaconChanged(object sender, EventArgs e)
         {
-            Log.getInstance().info(String.Format("BeaconConnector_BeaconChanged"));
+            //Log.getInstance().info(String.Format("BeaconConnector_BeaconChanged"));
             var ci = HdTimingBeacon.GetMainClock(BeaconConnector.CurrentBeacon); //CHANGE
             lblMainClock.Text = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
             lblScoreHome.Text = ci.ScoreHome.ToString();
@@ -132,7 +132,7 @@ namespace BeaconConnectionExample
 
 
             data.id++;
-            Log.getInstance().info("updated data");
+            //Log.getInstance().info("updated data");
 
             var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             string json = jsonSerializer.Serialize(Data.getInstance());
