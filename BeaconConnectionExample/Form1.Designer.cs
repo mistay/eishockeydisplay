@@ -144,22 +144,24 @@
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
             this.txtData.ReadOnly = true;
-            this.txtData.Size = new System.Drawing.Size(558, 98);
+            this.txtData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtData.Size = new System.Drawing.Size(853, 152);
             this.txtData.TabIndex = 9;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(16, 284);
+            this.txtLog.Location = new System.Drawing.Point(16, 338);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(558, 89);
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLog.Size = new System.Drawing.Size(853, 125);
             this.txtLog.TabIndex = 10;
             // 
             // lblLog
             // 
             this.lblLog.AutoSize = true;
-            this.lblLog.Location = new System.Drawing.Point(13, 265);
+            this.lblLog.Location = new System.Drawing.Point(13, 319);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(28, 16);
             this.lblLog.TabIndex = 11;
@@ -188,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 385);
+            this.ClientSize = new System.Drawing.Size(881, 492);
             this.Controls.Add(this.lblLogPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLog);
