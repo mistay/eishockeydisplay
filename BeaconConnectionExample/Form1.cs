@@ -48,6 +48,10 @@ namespace BeaconConnectionExample
             lblLogPath.Text = "Log Path: " + System.IO.Path.GetTempPath();
             Log.getInstance().LogReceived += onLogUpdated;
 
+
+            txtAddress.Text = Properties.Settings.Default.îpaddress;
+            txtPort.Text = Properties.Settings.Default.port;
+
             start();
         }
 
