@@ -37,6 +37,12 @@
             this.lblPeriod = new System.Windows.Forms.Label();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblURL = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.lblLog = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLogPath = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -123,11 +129,72 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lblURL
+            // 
+            this.lblURL.AutoSize = true;
+            this.lblURL.Location = new System.Drawing.Point(13, 113);
+            this.lblURL.Name = "lblURL";
+            this.lblURL.Size = new System.Drawing.Size(43, 16);
+            this.lblURL.TabIndex = 8;
+            this.lblURL.Text = "lblURL";
+            // 
+            // txtData
+            // 
+            this.txtData.Location = new System.Drawing.Point(16, 164);
+            this.txtData.Multiline = true;
+            this.txtData.Name = "txtData";
+            this.txtData.ReadOnly = true;
+            this.txtData.Size = new System.Drawing.Size(558, 98);
+            this.txtData.TabIndex = 9;
+            // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(16, 284);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.Size = new System.Drawing.Size(558, 89);
+            this.txtLog.TabIndex = 10;
+            // 
+            // lblLog
+            // 
+            this.lblLog.AutoSize = true;
+            this.lblLog.Location = new System.Drawing.Point(13, 265);
+            this.lblLog.Name = "lblLog";
+            this.lblLog.Size = new System.Drawing.Size(28, 16);
+            this.lblLog.TabIndex = 11;
+            this.lblLog.Text = "Log";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Data";
+            // 
+            // lblLogPath
+            // 
+            this.lblLogPath.AutoSize = true;
+            this.lblLogPath.Location = new System.Drawing.Point(13, 129);
+            this.lblLogPath.Name = "lblLogPath";
+            this.lblLogPath.Size = new System.Drawing.Size(66, 16);
+            this.lblLogPath.TabIndex = 13;
+            this.lblLogPath.Text = "lblLogPath";
+            this.lblLogPath.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 115);
+            this.ClientSize = new System.Drawing.Size(586, 385);
+            this.Controls.Add(this.lblLogPath);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLog);
+            this.Controls.Add(this.txtLog);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.lblURL);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.lblPeriod);
@@ -140,10 +207,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Beacon Connection Example";
+            this.Text = "hockeydata2web gateway";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += Form1_Load;
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +232,12 @@
         private System.Windows.Forms.Label lblPeriod;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblURL;
+        private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.Label lblLog;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLogPath;
     }
 }
 

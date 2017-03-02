@@ -17,12 +17,39 @@ namespace BeaconConnectionExample
         ZeromqBeaconConnector BeaconConnector;
         WebserverStatic webserverStatic = null;
 
+
+       
+
+
+        void onLogUpdated(object sender, EventArgsString e)
+        {
+            if (e.Data is string)
+                updateLog((string)e.Data);
+        }
+
+        private void updateLog(string log)
+        {
+            if (this.InvokeRequired)
+            {
+                MethodInvoker del = delegate { updateLog(log); };
+                this.Invoke(del);
+                return;
+            }
+
+            txtLog.Text += log;
+        }
         public Form1()
         {
             InitializeComponent();
             webserverStatic = new WebserverStatic();
-            webserverStatic.Start("http://+:8080/static/");
+            String url = "http://+:8080/static/";
+            webserverStatic.Start(url);
+            lblURL.Text = "Listening on " + url;
+            lblLogPath.Text = "Log Path: " + System.IO.Path.GetTempPath();
+            Log.getInstance().LogReceived += onLogUpdated;
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -110,6 +137,11 @@ namespace BeaconConnectionExample
 
             data.id++;
             Log.getInstance().info("updated data");
+
+            var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string json = jsonSerializer.Serialize(Data.getInstance());
+
+            txtData.Text = json;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -131,6 +163,11 @@ namespace BeaconConnectionExample
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

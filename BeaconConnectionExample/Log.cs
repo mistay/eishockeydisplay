@@ -8,7 +8,7 @@ using System.IO;
 
 namespace BeaconConnectionExample
 {
-    class Log
+    public class Log
     {
         private Log()
         {
@@ -25,6 +25,8 @@ namespace BeaconConnectionExample
             return _instance;
         }
 
+        public event Events.SenderHandlerString LogReceived = delegate { };
+
         public void info(string message, bool printNewline = true)
         {
             string line = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " " + message + ((printNewline) ? System.Environment.NewLine : "");
@@ -37,6 +39,8 @@ namespace BeaconConnectionExample
             {
                 Console.WriteLine("could not log into file: " + e.Message);
             }
+
+            if (LogReceived != null) LogReceived(this, new EventArgsString(line));
         }
     }
 }

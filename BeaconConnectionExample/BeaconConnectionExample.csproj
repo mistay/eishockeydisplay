@@ -135,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="EventArgsString.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
