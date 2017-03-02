@@ -51,7 +51,8 @@ namespace BeaconConnectionExample
             }
             catch (Exception e)
             {
-                Log.getInstance().info("could not parse id from http request: " + e.ToString());
+                // do not log, log runs out of space. id not neccessarily needed
+                // Log.getInstance().info("could not parse id from http request: " + e.ToString());
             }
 
 
