@@ -39,8 +39,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblURL = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.TextBox();
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.lblLog = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLogPath = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -148,25 +146,6 @@
             this.txtData.Size = new System.Drawing.Size(853, 152);
             this.txtData.TabIndex = 9;
             // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(16, 338);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ReadOnly = true;
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(853, 125);
-            this.txtLog.TabIndex = 10;
-            // 
-            // lblLog
-            // 
-            this.lblLog.AutoSize = true;
-            this.lblLog.Location = new System.Drawing.Point(13, 319);
-            this.lblLog.Name = "lblLog";
-            this.lblLog.Size = new System.Drawing.Size(28, 16);
-            this.lblLog.TabIndex = 11;
-            this.lblLog.Text = "Log";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -190,11 +169,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 492);
+            this.ClientSize = new System.Drawing.Size(881, 326);
             this.Controls.Add(this.lblLogPath);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblLog);
-            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.button2);
@@ -236,8 +213,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.TextBox txtData;
-        private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.Label lblLog;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLogPath;
     }

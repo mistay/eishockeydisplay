@@ -27,6 +27,7 @@ namespace BeaconConnectionExample
 
         public event Events.SenderHandlerString LogReceived = delegate { };
 
+
         public void info(string message, bool printNewline = true)
         {
             string line = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff") + " " + message + ((printNewline) ? System.Environment.NewLine : "");

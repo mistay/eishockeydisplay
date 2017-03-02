@@ -36,7 +36,7 @@ namespace BeaconConnectionExample
                 return;
             }
 
-            txtLog.Text = log + txtLog.Text;
+            //txtLog.Text = log + txtLog.Text;
         }
         public Form1()
         {
@@ -110,23 +110,23 @@ namespace BeaconConnectionExample
 
             IceHockeyClockInformation tmp = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon);
             data.penalty1homejersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty1homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString();
-            data.penalty1homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString();
+            data.penalty1homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+            data.penalty1homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
             tmp = HdTimingBeacon.GetPenaltyHome2Clock(BeaconConnector.CurrentBeacon);
             data.penalty2homejersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty2homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString();
-            data.penalty2homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString();
+            data.penalty2homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+            data.penalty2homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
             tmp = HdTimingBeacon.GetPenaltyAway1Clock(BeaconConnector.CurrentBeacon);
             data.penalty1awayjersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty1awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString();
-            data.penalty1awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString();
+            data.penalty1awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+            data.penalty1awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
             
             tmp = HdTimingBeacon.GetPenaltyAway2Clock(BeaconConnector.CurrentBeacon);
             data.penalty2awayjersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty2awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString();
-            data.penalty2awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString();
+            data.penalty2awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+            data.penalty2awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
 
             data.id++;
