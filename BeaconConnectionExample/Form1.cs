@@ -88,56 +88,63 @@ namespace BeaconConnectionExample
 
         private void BeaconConnector_BeaconChanged(object sender, EventArgs e)
         {
-            //Log.getInstance().info(String.Format("BeaconConnector_BeaconChanged"));
-            var ci = HdTimingBeacon.GetMainClock(BeaconConnector.CurrentBeacon); //CHANGE
-            lblMainClock.Text = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
-            lblScoreHome.Text = ci.ScoreHome.ToString();
-            lblScoreAway.Text = ci.ScoreAway.ToString();
-            lblPeriod.Text = ci.Period.ToString();
-            lblMainClock.BackColor = ci.ClockIsRunning ? Color.Green : Color.Red;
-            lblMainClock.ForeColor = (HdTimingBeacon.PerceivedBrightness(lblMainClock.BackColor) > 130 ? Color.Black : Color.White);
-            lblPeriod.BackColor = ci.ClockIsLastMinute ? Color.Yellow : Color.Blue;
-            Data data = Data.getInstance();
-            data.mainClock = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
-            data.scoreHome = ci.ScoreHome.ToString();
-            data.scoreAway = ci.ScoreAway.ToString();
-            data.period = ci.Period.ToString();
-            data.clockIsLastMinute = ci.ClockIsLastMinute;
-            data.clockIsRunning = ci.ClockIsRunning;
-            data.TeamnameHome = ci.TeamnameHome;
-            data.TeamnameAway = ci.TeamnameAway;
+            try
+            {
+                //Log.getInstance().info(String.Format("BeaconConnector_BeaconChanged"));
+                var ci = HdTimingBeacon.GetMainClock(BeaconConnector.CurrentBeacon); //CHANGE
+                lblMainClock.Text = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
+                lblScoreHome.Text = ci.ScoreHome.ToString();
+                lblScoreAway.Text = ci.ScoreAway.ToString();
+                lblPeriod.Text = ci.Period.ToString();
+                lblMainClock.BackColor = ci.ClockIsRunning ? Color.Green : Color.Red;
+                lblMainClock.ForeColor = (HdTimingBeacon.PerceivedBrightness(lblMainClock.BackColor) > 130 ? Color.Black : Color.White);
+                lblPeriod.BackColor = ci.ClockIsLastMinute ? Color.Yellow : Color.Blue;
+                Data data = Data.getInstance();
+                data.mainClock = String.Format("{0:00}:{1:00}", ci.ClockMinutesCorrected, ci.ClockSecondsCorrected);
+                data.scoreHome = ci.ScoreHome.ToString();
+                data.scoreAway = ci.ScoreAway.ToString();
+                data.period = ci.Period.ToString();
+                data.clockIsLastMinute = ci.ClockIsLastMinute;
+                data.clockIsRunning = ci.ClockIsRunning;
+                data.TeamnameHome = ci.TeamnameHome;
+                data.TeamnameAway = ci.TeamnameAway;
 
-            data.ShootoutScoreAway = ci.ShootoutScoreAway.ToString();
-            data.ShootoutScoreHome = ci.ShootoutScoreHome.ToString();
+                data.ShootoutScoreAway = ci.ShootoutScoreAway.ToString();
+                data.ShootoutScoreHome = ci.ShootoutScoreHome.ToString();
 
-            IceHockeyClockInformation tmp = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon);
-            data.penalty1homejersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty1homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
-            data.penalty1homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
+                IceHockeyClockInformation tmp = HdTimingBeacon.GetPenaltyHome1Clock(BeaconConnector.CurrentBeacon);
+                data.penalty1homejersey = tmp == null ? "" : tmp.JerseyNr;
+                data.penalty1homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+                data.penalty1homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
-            tmp = HdTimingBeacon.GetPenaltyHome2Clock(BeaconConnector.CurrentBeacon);
-            data.penalty2homejersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty2homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
-            data.penalty2homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
+                tmp = HdTimingBeacon.GetPenaltyHome2Clock(BeaconConnector.CurrentBeacon);
+                data.penalty2homejersey = tmp == null ? "" : tmp.JerseyNr;
+                data.penalty2homeClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+                data.penalty2homeClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
-            tmp = HdTimingBeacon.GetPenaltyAway1Clock(BeaconConnector.CurrentBeacon);
-            data.penalty1awayjersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty1awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
-            data.penalty1awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
-            
-            tmp = HdTimingBeacon.GetPenaltyAway2Clock(BeaconConnector.CurrentBeacon);
-            data.penalty2awayjersey = tmp == null ? "" : tmp.JerseyNr;
-            data.penalty2awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
-            data.penalty2awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
+                tmp = HdTimingBeacon.GetPenaltyAway1Clock(BeaconConnector.CurrentBeacon);
+                data.penalty1awayjersey = tmp == null ? "" : tmp.JerseyNr;
+                data.penalty1awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+                data.penalty1awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
+
+                tmp = HdTimingBeacon.GetPenaltyAway2Clock(BeaconConnector.CurrentBeacon);
+                data.penalty2awayjersey = tmp == null ? "" : tmp.JerseyNr;
+                data.penalty2awayClockMinutesCorrected = tmp == null ? "" : tmp.ClockMinutesCorrected.ToString("D2");
+                data.penalty2awayClockSecondsCorrected = tmp == null ? "" : tmp.ClockSecondsCorrected.ToString("D2");
 
 
-            data.id++;
-            //Log.getInstance().info("updated data");
+                data.id++;
+                //Log.getInstance().info("updated data");
 
-            var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            string json = jsonSerializer.Serialize(Data.getInstance());
+                var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                string json = jsonSerializer.Serialize(Data.getInstance());
 
-            txtData.Text = json;
+                txtData.Text = json;
+            }
+            catch (Exception ex)
+            {
+                Log.getInstance().info("exception in beaconchanged: " + ex.ToString());
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
