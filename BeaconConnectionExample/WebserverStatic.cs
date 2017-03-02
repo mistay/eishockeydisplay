@@ -48,7 +48,8 @@ namespace BeaconConnectionExample
             try
             {
                 oldid = long.Parse(context.Request.RawUrl.Remove(context.Request.RawUrl.IndexOf(find), find.Length));
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Log.getInstance().info("could not parse id from http request: " + e.ToString());
             }
@@ -67,7 +68,7 @@ namespace BeaconConnectionExample
 
             response.AddHeader("Access-Control-Allow-Origin", "*");
 
-            
+
             var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 
             string json = jsonSerializer.Serialize(Data.getInstance());
